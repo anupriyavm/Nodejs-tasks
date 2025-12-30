@@ -1,5 +1,4 @@
 const express = require("express");
-const schedule = require("node-schedule");
 const app = express();
 const mongoose = require("mongoose");
 const Task = require("./model");
@@ -19,10 +18,12 @@ app.post("/schedule", async (req, res) => {
       datetime,
       message,
     });
-    schedule.scheduleJob(new Date(datetime.toString()), function () {
-      console.log("TASK:", task);
-      console.log("MESSAGE:", message, new Date());
-    });
+
+    setTimeout(() => {
+      console.log("Task:", task);
+      console.log("Message:", message);
+    }, new Date(datetime.toString()) - new Date());
+
     res.json({
       status: "success",
       data: newTask,

@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "model.js": "^0.0.1",
+    "mongoose": "^9.1.0",
+    "node-schedule": "^2.1.1"
+  }
+}
